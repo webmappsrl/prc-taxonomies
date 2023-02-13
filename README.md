@@ -30,7 +30,7 @@
 -   Avvio di una bash all'interno del container php per installare tutte le dipendenze e lanciare il comando php artisan serve (utilizzare `APP_NAME` al posto di `$nomeApp`):
 
     ```sh
-    docker exec -it php81_$nomeApp bash
+    docker exec -it php81_prc-features bash
     composer install
     php artisan key:generate
     php artisan optimize
