@@ -7,16 +7,6 @@
 
 -   Copy file `.env-example` to `.env`
 
-    Questi valori nel file .env sono necessari per avviare l'ambiente docker. Hanno un valore di default e delle convenzioni associate, valutare la modifica:
-
-    -   `APP_NAME` (it's php container name and - postgrest container name, no space)
-    -   `DOCKER_PHP_PORT` (Incrementing starting from 9100 to 9199 range for MAC check with command "lsof -iTCP -sTCP:LISTEN")
-    -   `DOCKER_SERVE_PORT` (always 8000, only on local environment)
-    -   `DOCKER_PROJECT_DIR_NAME` (it's the folder name of the project)
-    -   `DB_DATABASE`
-    -   `DB_USERNAME`
-    -   `DB_PASSWORD`
-
     Se siamo in produzione, rimuovere (o commentare) la riga:
 
     ```yml
