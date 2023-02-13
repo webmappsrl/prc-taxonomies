@@ -13,6 +13,7 @@ services:
       - ${DOCKER_SERVE_PORT}:8000
     volumes:
       - ".:/var/www/html/${DOCKER_PROJECT_DIR_NAME}"
+      - "../wm-package:/var/www/html/wm-package"
     working_dir: '/var/www/html/${DOCKER_PROJECT_DIR_NAME}'
   db:
     image: postgis/postgis:14-3.3
