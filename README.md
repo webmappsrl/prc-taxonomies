@@ -1,33 +1,9 @@
-# Laravel Postgis Boilerplate
-
-Webmapp's Starting point
-
-## Laravel 9 Project based on Nova 4
-
-Boilerplate per Laravel 9 basato su php 8.1 e posgres + postgis. Supporto locale per web server php ed xdebug.
-
-### Differenze ambiente produzione locale
-
-Questo sistema di container docker è utilizzabile sia per lo sviluppo locale sia per un sistema in produzione. In locale abbiamo queste caratteristiche:
-
--   la possibilità di lanciare il processo processo `php artisan serve` all'interno del container phpfpm, quindi la configurazione della porta `DOCKER_SERVE_PORT` (default: `8000`) necessaria al progetto. Se servono più istanze laravel con processo artisan serve contemporaneamente in locale, valutare di dedicare una porta tcp dedicata ad ognuno di essi. Per fare questo basta solo aggiornare `DOCKER_SERVE_PORT`.
--   la presenza di xdebug, definito in fase di build dell'immagine durante l'esecuzione del comando
--   `APP_ENV=local`, `APP_DEBUG=true` e `LOG_LEVEL=debug` che istruiscono laravel su una serie di comportamenti per il debug e l'esecuzione locale dell'applicativo
--   Una password del db con complessità minore. **In produzione usare [password complesse](https://www.avast.com/random-password-generator#pc)**
+# PRC_TAXONOMIES
 
 ### Inizializzazione tramite boilerplate
 
--   Download del codice del boilerplate in una nuova cartella `nuovoprogetto` e disattivare il collegamento tra locale/remote:
-    ```sh
-    git clone https://github.com/webmappsrl/laravel-postgis-boilerplate.git nuovoprogetto
-    cd nuovoprogetto
-    git remote remove origin
-    ```
--   Effettuare il link tra la repository locale e quella remota (repository vuota github)
 
-    ```sh
-    git remote add origin git@github.com:username/repo.git
-    ```
+-   Clone del progetto: 
 
 -   Copy file `.env-example` to `.env`
 
