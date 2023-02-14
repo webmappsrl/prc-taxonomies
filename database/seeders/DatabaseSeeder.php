@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         // ]);
         $this->call(ActivitySeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(PoiTypeSeeder::class);
     }
 }
