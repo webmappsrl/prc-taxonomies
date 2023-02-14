@@ -17,7 +17,7 @@ class ActivityFactory extends Factory
     public function definition()
     {
         return [
-            'identifier' => $this->faker->word(),
+            'identifier' => $this->faker->unique()->word(),
             'name' => [
                 'it' => $this->faker->name(),
                 'en' => $this->faker->name(),
