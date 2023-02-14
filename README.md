@@ -1,22 +1,24 @@
 # PRC_TAXONOMIES
 
-### Inizializzazione tramite boilerplate
+Questo processor viene utilizzato per la gestione condivisa delle tassonomie standard:
 
+- activities (attività)
+- poi_types (categorie dei punti di interesse)
+- targets (target di utenza)
+- whens (periodi ideali per lo svolgimento di)
+
+### Inizializzazione progetto locale
 
 -   Clone del progetto: 
 
--   Copy file `.env-example` to `.env`
-
-    Se siamo in produzione, rimuovere (o commentare) la riga:
-
-    ```yml
-    - ${DOCKER_SERVE_PORT}:8000
+    ```sh
+    git clone git@github.com:webmappsrl/prc-taxonomies.git
     ```
 
-    dal file `docker-compose.yml`
+-   Copy file `.env-example` to `.env`
 
 -   Creare l'ambiente docker
-    ```sh
+    ```sh 
     bash docker/init-docker.sh
     ```
 -   Digitare `y` durante l'esecuzione dello script per l'installazione di xdebug
@@ -35,10 +37,24 @@
     php artisan key:generate
     php artisan optimize
     php artisan migrate
-    php artisan serve --host 0.0.0.0
     ```
 
 -   A questo punto l'applicativo è in ascolto su <http://127.0.0.1:8000> (la porta è quella definita in `DOCKER_SERVE_PORT`)
+
+
+- Per semplificare l'accesso al container docker e avere alcuni comandi a disposizione, si suggerisce l'inserimento dei seguenti aliases all'interno del file .zshrc (o equivalente se si usa altra shell)
+
+```sh
+prc_taxonomies='docker exec -it php81_prc-taxonomies bash'
+prc_taxonomies_psql='docker exec -it postgres_prc-taxonomies psql -U prc-taxonomies'
+prc_taxonomies_serve='docker exec -it php81_prc-taxonomies php artisan serve --host 0.0.0.0'
+```
+
+- Attivare il server e verificare accedendo al browser all'indirizzo http://0.0.0.0:8051
+
+```sh
+prc_taxonomies_serve
+```
 
 ### Configurazione xdebug vscode (solo in locale)
 
