@@ -7,6 +7,27 @@ Questo processor viene utilizzato per la gestione condivisa delle tassonomie sta
 - targets (target di utenza)
 - whens (periodi ideali per lo svolgimento di)
 
+## INSTALL
+
+First of all install the [GEOBOX](https://github.com/webmappsrl/geobox) repo and configure the ALIASES command. 
+
+```sh
+git clone git@github.com:webmappsrl/prc-taxonomies.git
+cd prc-taxonomies
+bash docker/init-docker.sh
+geobox_install prc-taxonomies
+```
+
+Important NOTE: remember to checkout the develop branch.
+
+## Run prc-taxonomies server from shell outside docker
+
+In order to start a prc-taxonomies server in local environment use the following command:
+
+```sh
+geobox_serve prc-taxonomies
+```
+
 ### Inizializzazione progetto locale
 
 -   Clone del progetto: 
