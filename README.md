@@ -50,8 +50,6 @@ geobox_serve prc-taxonomies
         docker ps
         ```
 
-    Test
-
 -   Avvio di una bash all'interno del container php per installare tutte le dipendenze e lanciare il comando php artisan serve (utilizzare `APP_NAME` al posto di `$nomeApp`):
 
     ```sh
