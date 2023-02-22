@@ -2,14 +2,14 @@
 
 Questo processor viene utilizzato per la gestione condivisa delle tassonomie standard:
 
-- activities (attività)
-- poi_types (categorie dei punti di interesse)
-- targets (target di utenza)
-- whens (periodi ideali per lo svolgimento di)
+-   activities (attività)
+-   poi_types (categorie dei punti di interesse)
+-   targets (target di utenza)
+-   whens (periodi ideali per lo svolgimento di)
 
 ## INSTALL
 
-First of all install the [GEOBOX](https://github.com/webmappsrl/geobox) repo and configure the ALIASES command. 
+First of all install the [GEOBOX](https://github.com/webmappsrl/geobox) repo and configure the ALIASES command.
 
 ```sh
 git clone git@github.com:webmappsrl/prc-taxonomies.git
@@ -30,7 +30,7 @@ geobox_serve prc-taxonomies
 
 ### Inizializzazione progetto locale
 
--   Clone del progetto: 
+-   Clone del progetto:
 
     ```sh
     git clone git@github.com:webmappsrl/prc-taxonomies.git
@@ -39,16 +39,18 @@ geobox_serve prc-taxonomies
 -   Copy file `.env-example` to `.env`
 
 -   Creare l'ambiente docker
-    ```sh 
+    ```sh
     bash docker/init-docker.sh
     ```
 -   Digitare `y` durante l'esecuzione dello script per l'installazione di xdebug
 
 -   Verificare che i container si siano avviati
 
-    ```sh
-    docker ps
-    ```
+        ```sh
+        docker ps
+        ```
+
+    Test
 
 -   Avvio di una bash all'interno del container php per installare tutte le dipendenze e lanciare il comando php artisan serve (utilizzare `APP_NAME` al posto di `$nomeApp`):
 
@@ -62,8 +64,7 @@ geobox_serve prc-taxonomies
 
 -   A questo punto l'applicativo è in ascolto su <http://127.0.0.1:8000> (la porta è quella definita in `DOCKER_SERVE_PORT`)
 
-
-- Per semplificare l'accesso al container docker e avere alcuni comandi a disposizione, si suggerisce l'inserimento dei seguenti aliases all'interno del file .zshrc (o equivalente se si usa altra shell)
+-   Per semplificare l'accesso al container docker e avere alcuni comandi a disposizione, si suggerisce l'inserimento dei seguenti aliases all'interno del file .zshrc (o equivalente se si usa altra shell)
 
 ```sh
 prc_taxonomies='docker exec -it php81_prc-taxonomies bash'
@@ -71,7 +72,7 @@ prc_taxonomies_psql='docker exec -it postgres_prc-taxonomies psql -U prc-taxonom
 prc_taxonomies_serve='docker exec -it php81_prc-taxonomies php artisan serve --host 0.0.0.0'
 ```
 
-- Attivare il server e verificare accedendo al browser all'indirizzo http://0.0.0.0:8051
+-   Attivare il server e verificare accedendo al browser all'indirizzo http://0.0.0.0:8051
 
 ```sh
 prc_taxonomies_serve
@@ -140,6 +141,7 @@ Durante l'esecuzione degli script potrebbero verificarsi problemi di scrittura s
     ```bash
       chown -R 33 storage
     ```
+
     NOTA: per eseguire il comando chown potrebbe essere necessario avere i privilegi di root. In questo caso si deve effettuare l'accesso al cointainer del docker utilizzando lo specifico utente root (-u 0). Questo è valido anche sbloccare la possibilità di scrivere nella cartella /var/log per il funzionamento di Xdedug
 
 -   Utilizzare il parametro `-u` per il comando `docker exec` così da specificare l'id utente, eg come utente root (utilizzare `APP_NAME` al posto di `$nomeApp`):
